@@ -24,12 +24,15 @@ extension URLRequest {
         }
     }
 
-    func encoded(parameters: [String: Any]) -> URLRequest {
-        var newURLRequest = URLRequest(url: self.url!)
+    func encoded(parameters: [String: Any]) throws -> URLRequest {
+        guard let url = self.url else {
+            throw NetworkError.badRequest
+        }
+        var newURLRequest = URLRequest(url: url)
         newURLRequest.httpMethod = self.httpMethod
         newURLRequest.allHTTPHeaderFields = self.allHTTPHeaderFields
         guard !parameters.isEmpty else { return self }
-        if var components = URLComponents(url: newURLRequest.url!, resolvingAgainstBaseURL: false) {
+        if var components = URLComponents(url: url, resolvingAgainstBaseURL: false) {
             var queryItems: [URLQueryItem] = []
             for (key, value) in parameters {
                 queryItems.append(URLQueryItem(name: key, value: "\(value)"))

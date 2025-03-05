@@ -29,7 +29,7 @@ extension NetworkTarget {
 
         switch body {
         case .requestParameters(let parameters):
-            return request.encoded(parameters: parameters)
+            return try? request.encoded(parameters: parameters)
         case .JSONRequest(let object):
             return try? request.encoded(encodable: object)
         default:
