@@ -14,35 +14,47 @@
 			remoteGlobalIDString = A4F5067D2D764E04005A8131;
 			remoteInfo = "test-pays";
 		};
-		A4F5069A2D764E06005A8131 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A4F506762D764E04005A8131 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A4F5067D2D764E04005A8131;
-			remoteInfo = "test-pays";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A4F5067E2D764E04005A8131 /* test-pays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "test-pays.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4F5068F2D764E06005A8131 /* test-paysTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "test-paysTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A4F506992D764E06005A8131 /* test-paysUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "test-paysUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4F508062D78AF08005A8131 /* test-pays.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "test-pays.xctestplan"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		A4F507912D776ABA005A8131 /* Exceptions for "test-pays" folder in "test-pays" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = A4F5067D2D764E04005A8131 /* test-pays */;
+		};
+		A4F5079E2D779940005A8131 /* Exceptions for "test-paysTests" folder in "test-pays" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Mock/countriesResponse.json,
+				Mock/searchCountryResponse.json,
+			);
+			target = A4F5067D2D764E04005A8131 /* test-pays */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		A4F506802D764E04005A8131 /* test-pays */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				A4F507912D776ABA005A8131 /* Exceptions for "test-pays" folder in "test-pays" target */,
+			);
 			path = "test-pays";
 			sourceTree = "<group>";
 		};
 		A4F506922D764E06005A8131 /* test-paysTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				A4F5079E2D779940005A8131 /* Exceptions for "test-paysTests" folder in "test-pays" target */,
+			);
 			path = "test-paysTests";
-			sourceTree = "<group>";
-		};
-		A4F5069C2D764E06005A8131 /* test-paysUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "test-paysUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -62,22 +74,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A4F506962D764E06005A8131 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		A4F506752D764E04005A8131 = {
 			isa = PBXGroup;
 			children = (
+				A4F508062D78AF08005A8131 /* test-pays.xctestplan */,
 				A4F506802D764E04005A8131 /* test-pays */,
 				A4F506922D764E06005A8131 /* test-paysTests */,
-				A4F5069C2D764E06005A8131 /* test-paysUITests */,
 				A4F5067F2D764E04005A8131 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,7 +92,6 @@
 			children = (
 				A4F5067E2D764E04005A8131 /* test-pays.app */,
 				A4F5068F2D764E06005A8131 /* test-paysTests.xctest */,
-				A4F506992D764E06005A8131 /* test-paysUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,29 +144,6 @@
 			productReference = A4F5068F2D764E06005A8131 /* test-paysTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A4F506982D764E06005A8131 /* test-paysUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A4F506A92D764E06005A8131 /* Build configuration list for PBXNativeTarget "test-paysUITests" */;
-			buildPhases = (
-				A4F506952D764E06005A8131 /* Sources */,
-				A4F506962D764E06005A8131 /* Frameworks */,
-				A4F506972D764E06005A8131 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A4F5069B2D764E06005A8131 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				A4F5069C2D764E06005A8131 /* test-paysUITests */,
-			);
-			name = "test-paysUITests";
-			packageProductDependencies = (
-			);
-			productName = "test-paysUITests";
-			productReference = A4F506992D764E06005A8131 /* test-paysUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -177,10 +158,6 @@
 						CreatedOnToolsVersion = 16.2;
 					};
 					A4F5068E2D764E06005A8131 = {
-						CreatedOnToolsVersion = 16.2;
-						TestTargetID = A4F5067D2D764E04005A8131;
-					};
-					A4F506982D764E06005A8131 = {
 						CreatedOnToolsVersion = 16.2;
 						TestTargetID = A4F5067D2D764E04005A8131;
 					};
@@ -202,7 +179,6 @@
 			targets = (
 				A4F5067D2D764E04005A8131 /* test-pays */,
 				A4F5068E2D764E06005A8131 /* test-paysTests */,
-				A4F506982D764E06005A8131 /* test-paysUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -216,13 +192,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A4F5068D2D764E06005A8131 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A4F506972D764E06005A8131 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -246,13 +215,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A4F506952D764E06005A8131 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -260,11 +222,6 @@
 			isa = PBXTargetDependency;
 			target = A4F5067D2D764E04005A8131 /* test-pays */;
 			targetProxy = A4F506902D764E06005A8131 /* PBXContainerItemProxy */;
-		};
-		A4F5069B2D764E06005A8131 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A4F5067D2D764E04005A8131 /* test-pays */;
-			targetProxy = A4F5069A2D764E06005A8131 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -396,6 +353,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "test-pays/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Pays;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -404,8 +363,7 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -414,10 +372,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.luizsoares.test-pays";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = 1;
 				XROS_DEPLOYMENT_TARGET = 2.2;
 			};
 			name = Debug;
@@ -435,6 +394,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "test-pays/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Pays;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -443,8 +404,7 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -453,10 +413,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.luizsoares.test-pays";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = 1;
 				XROS_DEPLOYMENT_TARGET = 2.2;
 			};
 			name = Release;
@@ -507,50 +468,6 @@
 			};
 			name = Release;
 		};
-		A4F506AA2D764E06005A8131 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = K2Q453W5U7;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
-				MACOSX_DEPLOYMENT_TARGET = 15.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.luizsoares.test-paysUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_TARGET_NAME = "test-pays";
-				XROS_DEPLOYMENT_TARGET = 2.2;
-			};
-			name = Debug;
-		};
-		A4F506AB2D764E06005A8131 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = K2Q453W5U7;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
-				MACOSX_DEPLOYMENT_TARGET = 15.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.luizsoares.test-paysUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_TARGET_NAME = "test-pays";
-				XROS_DEPLOYMENT_TARGET = 2.2;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -577,15 +494,6 @@
 			buildConfigurations = (
 				A4F506A72D764E06005A8131 /* Debug */,
 				A4F506A82D764E06005A8131 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A4F506A92D764E06005A8131 /* Build configuration list for PBXNativeTarget "test-paysUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A4F506AA2D764E06005A8131 /* Debug */,
-				A4F506AB2D764E06005A8131 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
