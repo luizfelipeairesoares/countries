@@ -1,0 +1,30 @@
+[
+    {
+       "flags":{
+          "png":"https://flagcdn.com/w320/ca.png",
+          "svg":"https://flagcdn.com/ca.svg",
+          "alt":"The flag of Canada is composed of a red vertical band on the hoist and fly sides and a central white square that is twice the width of the vertical bands. A large eleven-pointed red maple leaf is centered in the white square."
+       },
+       "name":{
+          "common":"Canada",
+          "official":"Canada",
+          "nativeName":{
+             "eng":{
+                "official":"Canada",
+                "common":"Canada"
+             },
+             "fra":{
+                "official":"Canada",
+                "common":"Canada"
+             }
+          }
+       },
+       "capital":[
+          "Ottawa"
+       ],
+       "population":38005238,
+       "continents":[
+          "North America"
+       ]
+    }
+]
