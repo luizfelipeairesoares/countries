@@ -43,6 +43,9 @@ class ListViewModel: ListViewModelProtocol, ObservableObject {
     public func loadAll() {
         state = filteredDatasource.isEmpty ? .loading : .showContent(countries: filteredDatasource)
         request()
+//        Task.init {
+//            try await requestConcurrently()
+//        }
     }
 
     func searchCountry() {
@@ -73,7 +76,19 @@ class ListViewModel: ListViewModelProtocol, ObservableObject {
                 self?.state = .error(message: error.errorMessage)
             }
         }
+    }
 
+    private func requestConcurrently() async throws {
+        do {
+            let countries = try await service.listAllConcurrently()
+            Task { @MainActor in
+                self.state = .showContent(countries: countries)
+            }
+        } catch let error as NetworkError {
+            Task { @MainActor in
+                self.state = .error(message: error.errorMessage)
+            }
+        }
     }
 
     private func search() {
