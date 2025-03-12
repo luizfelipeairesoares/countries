@@ -2,34 +2,83 @@
 //  CountriesServiceXCTests.swift
 //  test-paysTests
 //
-//  Created by Luiz Aires Soares on 2025-03-12.
 //
 
 import XCTest
+import Combine
+@testable import test_pays
 
 final class CountriesServiceXCTests: XCTestCase {
 
+    var countries: [Country]!
+    var service: CountriesService!
+
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        countries = []
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testListAllCombine() throws {
+        service = CountriesService(provider: createMockNetworkProvider("countriesResponse"))
+        let expectation = expectation(description: "Expects successfull response.")
+        service.listAll { [weak self] result in
+            switch result {
+            case .success(let response):
+                self?.countries = response
+                expectation.fulfill()
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        waitForExpectations(timeout: 5)
+        XCTAssertTrue(!countries.isEmpty, "Countries array should not be empty.")
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testListAllConcurrently() throws {
+        service = CountriesService(provider: createMockNetworkProvider("countriesResponse"))
+        let expectation = expectation(description: "Expects successfull response.")
+        Task.init {
+            countries = try await service.listAllConcurrently()
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 5)
+        XCTAssertTrue(!countries.isEmpty, "Countries array should not be empty.")
+    }
+
+    // MARK: - Private
+
+    private func createMockNetworkProvider(_ response: String) -> NetworkProviderProtocol {
+        let configuration = URLSessionConfiguration.default
+        configuration.protocolClasses = [MockURLProtocol.self]
+        createMockURLHandler(resource: response)
+        let session = URLSession(configuration: configuration)
+        return NetworkProviderMock(session: session)
+    }
+
+    private func createMockURLHandler(resource: String) {
+        MockURLProtocol.requestHandler = { request in
+            guard let url = request.url else {
+                throw NetworkError.badRequest
+            }
+            guard let response = HTTPURLResponse(
+                url: url,
+                statusCode: 200,
+                httpVersion: nil,
+                headerFields: nil
+            ) else {
+                throw NetworkError.badRequest
+            }
+            if let path = Bundle.main.path(forResource: resource, ofType: "json") {
+                let data = try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                return (response, data)
+            } else {
+                throw NetworkError.decodingError
+            }
         }
     }
+
 
 }

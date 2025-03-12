@@ -33,6 +33,14 @@ import Foundation
         }
     }
 
+    @Test("CountriesService.all response is successfull based on mocked data.")
+    func listAllConcurrently() async throws {
+        var countries: [Country] = []
+        let service = CountriesService(provider: createMockNetworkProvider("countriesResponse"))
+        countries = try await service.listAllConcurrently()
+        #expect(countries.isEmpty == false)
+    }
+
     @Test("CountriesService.searchCountry response is successfull based on mocked data.")
     func searchCountry() async throws {
         var countries: [Country] = []
