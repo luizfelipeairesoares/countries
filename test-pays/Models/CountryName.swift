@@ -6,7 +6,7 @@
 
 import Foundation
 
-struct CountryName: Codable {
+struct CountryName: Codable, Hashable {
 
     let common: String
     let official: String

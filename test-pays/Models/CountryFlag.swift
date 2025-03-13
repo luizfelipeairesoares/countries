@@ -6,7 +6,7 @@
 
 import Foundation
 
-struct CountryFlag: Codable {
+struct CountryFlag: Codable, Hashable {
 
     let png: String
     let svg: String

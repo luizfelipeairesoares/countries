@@ -6,7 +6,7 @@
 
 import Foundation
 
-struct Country: Codable, Identifiable, Equatable {
+struct Country: Codable, Identifiable, Equatable, Hashable {
 
     let id = UUID()
     let name: CountryName
