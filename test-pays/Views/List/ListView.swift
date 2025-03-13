@@ -15,7 +15,7 @@ struct ListView: View {
     }
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             switch viewModel.state {
             case .loading:
                 ProgressView()
@@ -34,9 +34,7 @@ struct ListView: View {
                 )
             case .showContent(let datasource):
                 List(datasource, id: \.id) { country in
-                    NavigationLink {
-                        viewModel.show(country)
-                    } label: {
+                    NavigationLink(value: country) {
                         ListItemView(
                             name: country.name.common,
                             flag: country.flags.png
@@ -47,6 +45,11 @@ struct ListView: View {
                         dimension[.leading]
                     }
                 }
+                .navigationDestination(
+                    for: Country.self,
+                    destination: { country in
+                        viewModel.show(country)
+                    })
                 .scrollContentBackground(.hidden)
                 .background(Color(hex: "#DCE9EE"))
                 .listStyle(GroupedListStyle())
